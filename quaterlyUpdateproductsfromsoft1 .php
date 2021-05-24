@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 
 header('Content-Type: text/html; charset=utf-8');
 
-$myfile = fopen("ArisUpdateProductsFile.txt", "w") or die("Unable to open file!");
+$myfile = fopen("ArisQuaterlyUpdateProductsFile.txt", "w") or die("Unable to open file!");
 fwrite($myfile, "Update Start " . date("d/m/Y H:i") . "\n");
 //login
 $curlLogin = curl_init();
@@ -117,7 +117,7 @@ curl_setopt_array($curlProd, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_POSTFIELDS => "{\n\n    \"service\": \"sqlData\",\n\n    \"clientID\": \"$authClientID\",\n\n    \"appId\": \"1050\",\n\n\t\t\"SqlName\": \"GETITEMS\"\n}",
+  CURLOPT_POSTFIELDS => "{\n\n    \"service\": \"sqlData\",\n\n    \"clientID\": \"$authClientID\",\n\n    \"appId\": \"1050\",\n\n\t\t\"SqlName\": \"GETUPDITEMS\"\n}",
   CURLOPT_HTTPHEADER => [
     "Content-Type: application/json"
   ],
